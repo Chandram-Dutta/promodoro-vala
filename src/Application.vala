@@ -16,7 +16,7 @@ public class Promodoro : Gtk.Application {
         header_bar.set_show_close_button(true);
         
         Gtk.Box vbox = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        vbox.pack_start (new Gtk.Label ("1"), true, false, 0);
+        vbox.pack_start (new Gtk.Button.with_label ("1"), true, false, 0);
         vbox.pack_start (new Gtk.Label ("2"), false, false, 0);
         vbox.pack_start (new Gtk.Label ("3"), true, false, 0);
         
