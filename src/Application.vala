@@ -6,13 +6,17 @@ public class Promodoro : Gtk.Application {
         );
     }
 
+
+
     protected override void activate () {
+        string play_pause_button_label = "Play";
+
         var main_window = new Gtk.ApplicationWindow (this) {
             title = "Promodoro"
         };
         var header_bar = new Gtk.HeaderBar();
         header_bar.set_title("Promodoro");
-        header_bar.set_subtitle("A Convinient App");
+        // header_bar.set_subtitle("A Convinient App");
         header_bar.set_show_close_button(true);
 
         unowned Gtk.StyleContext header_bar_context = header_bar.get_style_context ();
@@ -22,10 +26,25 @@ public class Promodoro : Gtk.Application {
 
 
         Gtk.Button play_pause_button = new Gtk.Button(){
-             label = ("Play"),
+             label = (play_pause_button_label),
             image = new Gtk.Image.from_icon_name ("media-playback-start", Gtk.IconSize.SMALL_TOOLBAR),
             always_show_image = true,
         };
+        play_pause_button.clicked.connect(()=>{
+            if (play_pause_button_label=="Play")
+            {
+                play_pause_button_label="Pause";
+                play_pause_button.set_label(play_pause_button_label);
+                play_pause_button.set_image(new Gtk.Image.from_icon_name ("media-playback-pause", Gtk.IconSize.SMALL_TOOLBAR));
+
+            }else
+            {
+                play_pause_button_label="Play";
+                play_pause_button.set_label(play_pause_button_label);
+                play_pause_button.set_image(new Gtk.Image.from_icon_name ("media-playback-start", Gtk.IconSize.SMALL_TOOLBAR));
+            }
+        });
+        
         Gtk.Button reset_button = new Gtk.Button(){
             label = ("Reset"),
             image = new Gtk.Image.from_icon_name ("media-playlist-repeat", Gtk.IconSize.SMALL_TOOLBAR),
@@ -35,7 +54,7 @@ public class Promodoro : Gtk.Application {
         rest_time.set_justify(Gtk.Justification.CENTER);
         Gtk.Label work_time = new Gtk.Label("Work Time\n\n45\nMins.");
         work_time.set_justify(Gtk.Justification.CENTER);
-        Gtk.Label rounds = new Gtk.Label("No. of Rounds\n\n2\n");
+        Gtk.Label rounds = new Gtk.Label("No. of\nRounds\n\n2\n");
         rounds.set_justify(Gtk.Justification.CENTER);
 
         Gtk.Box vbox = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
