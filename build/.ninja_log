@@ -1,8 +1,8 @@
 # ninja log v5
-0	843	1637053204687115154	com.github.Chandram-Dutta.promodoro-vala@exe/src/Main.c	dfe2052919f859fb
-0	843	1637053204687115154	com.github.Chandram-Dutta.promodoro-vala@exe/src/Window.c	dfe2052919f859fb
-0	843	1637053204687115154	com.github.Chandram-Dutta.promodoro-vala@exe/src/Application.c	dfe2052919f859fb
-843	3961	1637053207888709034	com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Main.c.o	613cc1e2d8d89a09
-844	4021	1637053207948659120	com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Application.c.o	4858f32f254accb8
-843	4040	1637053207968642483	com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Window.c.o	4cf8c4d20a5f1aa6
-4040	4927	1637053208855916682	com.github.Chandram-Dutta.promodoro-vala	35f619b5a75db1
+0	525	1637053915753302979	com.github.Chandram-Dutta.promodoro-vala@exe/src/Main.c	dfe2052919f859fb
+0	525	1637053915753302979	com.github.Chandram-Dutta.promodoro-vala@exe/src/Window.c	dfe2052919f859fb
+0	525	1637053915753302979	com.github.Chandram-Dutta.promodoro-vala@exe/src/Application.c	dfe2052919f859fb
+525	938	1637053916245349962	com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Application.c.o	4858f32f254accb8
+525	1005	1637053916313356458	com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Main.c.o	613cc1e2d8d89a09
+525	1049	1637053916361361043	com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Window.c.o	4cf8c4d20a5f1aa6
+1049	1189	1637053916501374416	com.github.Chandram-Dutta.promodoro-vala	35f619b5a75db1
