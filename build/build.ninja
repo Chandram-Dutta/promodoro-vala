@@ -31,7 +31,7 @@ rule CUSTOM_COMMAND
  restat = 1
 
 rule REGENERATE_BUILD
- command = /usr/bin/meson --internal regenerate /home/chandramdutta/Projects/promodoro-vala/src2 /home/chandramdutta/Projects/promodoro-vala/src2/build --backend ninja
+ command = /usr/bin/meson --internal regenerate /home/chandramdutta/Projects/promodoro-vala /home/chandramdutta/Projects/promodoro-vala/build --backend ninja
  description = Regenerating build files.
  generator = 1
 
@@ -41,22 +41,22 @@ build PHONY: phony
 
 # Build rules for targets
 
-build com.github.Chandram-Dutta.promodoro-vala@exe/Main.c com.github.Chandram-Dutta.promodoro-vala@exe/Window.c com.github.Chandram-Dutta.promodoro-vala@exe/Application.c: vala_COMPILER ../Main.vala ../Window.vala ../Application.vala
+build com.github.Chandram-Dutta.promodoro-vala@exe/src/Main.c com.github.Chandram-Dutta.promodoro-vala@exe/src/Window.c com.github.Chandram-Dutta.promodoro-vala@exe/src/Application.c: vala_COMPILER ../src/Main.vala ../src/Window.vala ../src/Application.vala
  ARGS = -C --debug --debug --pkg gtk+-3.0 --color=always --directory com.github.Chandram-Dutta.promodoro-vala@exe --basedir ../
 
-build com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_Main.c.o: c_COMPILER com.github.Chandram-Dutta.promodoro-vala@exe/Main.c
- DEPFILE = com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_Main.c.o.d
+build com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Main.c.o: c_COMPILER com.github.Chandram-Dutta.promodoro-vala@exe/src/Main.c
+ DEPFILE = com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Main.c.o.d
  ARGS = -Icom.github.Chandram-Dutta.promodoro-vala@exe -I. -I.. -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0 -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -w -g -pthread
 
-build com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_Window.c.o: c_COMPILER com.github.Chandram-Dutta.promodoro-vala@exe/Window.c
- DEPFILE = com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_Window.c.o.d
+build com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Window.c.o: c_COMPILER com.github.Chandram-Dutta.promodoro-vala@exe/src/Window.c
+ DEPFILE = com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Window.c.o.d
  ARGS = -Icom.github.Chandram-Dutta.promodoro-vala@exe -I. -I.. -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0 -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -w -g -pthread
 
-build com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_Application.c.o: c_COMPILER com.github.Chandram-Dutta.promodoro-vala@exe/Application.c
- DEPFILE = com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_Application.c.o.d
+build com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Application.c.o: c_COMPILER com.github.Chandram-Dutta.promodoro-vala@exe/src/Application.c
+ DEPFILE = com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Application.c.o.d
  ARGS = -Icom.github.Chandram-Dutta.promodoro-vala@exe -I. -I.. -I/usr/include/at-spi2-atk/2.0 -I/usr/include/at-spi-2.0 -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -I/usr/include/gtk-3.0 -I/usr/include/gio-unix-2.0 -I/usr/include/pango-1.0 -I/usr/include/fribidi -I/usr/include/harfbuzz -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pixman-1 -I/usr/include/uuid -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/libmount -I/usr/include/blkid -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -w -g -pthread
 
-build com.github.Chandram-Dutta.promodoro-vala: c_LINKER com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_Main.c.o com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_Window.c.o com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_Application.c.o | /usr/lib/x86_64-linux-gnu/libgtk-3.so /usr/lib/x86_64-linux-gnu/libgdk-3.so /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so /usr/lib/x86_64-linux-gnu/libpango-1.0.so /usr/lib/x86_64-linux-gnu/libharfbuzz.so /usr/lib/x86_64-linux-gnu/libatk-1.0.so /usr/lib/x86_64-linux-gnu/libcairo-gobject.so /usr/lib/x86_64-linux-gnu/libcairo.so /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so /usr/lib/x86_64-linux-gnu/libgio-2.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so
+build com.github.Chandram-Dutta.promodoro-vala: c_LINKER com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Main.c.o com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Window.c.o com.github.Chandram-Dutta.promodoro-vala@exe/meson-generated_src_Application.c.o | /usr/lib/x86_64-linux-gnu/libgtk-3.so /usr/lib/x86_64-linux-gnu/libgdk-3.so /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so /usr/lib/x86_64-linux-gnu/libpango-1.0.so /usr/lib/x86_64-linux-gnu/libharfbuzz.so /usr/lib/x86_64-linux-gnu/libatk-1.0.so /usr/lib/x86_64-linux-gnu/libcairo-gobject.so /usr/lib/x86_64-linux-gnu/libcairo.so /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so /usr/lib/x86_64-linux-gnu/libgio-2.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so
  LINK_ARGS = -Wl,--as-needed -Wl,--no-undefined -Wl,--start-group /usr/lib/x86_64-linux-gnu/libgtk-3.so /usr/lib/x86_64-linux-gnu/libgdk-3.so /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so /usr/lib/x86_64-linux-gnu/libpango-1.0.so /usr/lib/x86_64-linux-gnu/libharfbuzz.so /usr/lib/x86_64-linux-gnu/libatk-1.0.so /usr/lib/x86_64-linux-gnu/libcairo-gobject.so /usr/lib/x86_64-linux-gnu/libcairo.so /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so /usr/lib/x86_64-linux-gnu/libgio-2.0.so /usr/lib/x86_64-linux-gnu/libgobject-2.0.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so -Wl,--end-group
 
 # Test rules
@@ -94,13 +94,13 @@ build dist: phony meson-dist
 # Suffix
 
 build meson-TAGS: CUSTOM_COMMAND PHONY
- COMMAND = /usr/bin/meson --internal tags etags /home/chandramdutta/Projects/promodoro-vala/src2
+ COMMAND = /usr/bin/meson --internal tags etags /home/chandramdutta/Projects/promodoro-vala
  pool = console
 
 build TAGS: phony meson-TAGS
 
 build meson-ctags: CUSTOM_COMMAND PHONY
- COMMAND = /usr/bin/meson --internal tags ctags /home/chandramdutta/Projects/promodoro-vala/src2
+ COMMAND = /usr/bin/meson --internal tags ctags /home/chandramdutta/Projects/promodoro-vala
  pool = console
 
 build ctags: phony meson-ctags

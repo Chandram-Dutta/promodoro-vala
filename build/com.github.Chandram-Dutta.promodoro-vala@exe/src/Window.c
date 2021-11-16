@@ -76,11 +76,11 @@ my_app_window_construct (GType object_type,
                          Promodoro* app)
 {
 	MyAppWindow * self = NULL;
-#line 3 "../Window.vala"
+#line 3 "../src/Window.vala"
 	g_return_val_if_fail (app != NULL, NULL);
-#line 4 "../Window.vala"
+#line 4 "../src/Window.vala"
 	self = (MyAppWindow*) g_object_new (object_type, "application", app, NULL);
-#line 3 "../Window.vala"
+#line 3 "../src/Window.vala"
 	return self;
 #line 86 "Window.c"
 }
@@ -88,7 +88,7 @@ my_app_window_construct (GType object_type,
 MyAppWindow*
 my_app_window_new (Promodoro* app)
 {
-#line 3 "../Window.vala"
+#line 3 "../src/Window.vala"
 	return my_app_window_construct (MY_APP_TYPE_WINDOW, app);
 #line 94 "Window.c"
 }
@@ -96,9 +96,9 @@ my_app_window_new (Promodoro* app)
 static Block1Data*
 block1_data_ref (Block1Data* _data1_)
 {
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	g_atomic_int_inc (&_data1_->_ref_count_);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	return _data1_;
 #line 104 "Window.c"
 }
@@ -108,19 +108,19 @@ block1_data_unref (void * _userdata_)
 {
 	Block1Data* _data1_;
 	_data1_ = (Block1Data*) _userdata_;
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	if (g_atomic_int_dec_and_test (&_data1_->_ref_count_)) {
 #line 114 "Window.c"
 		MyAppWindow* self;
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 		self = _data1_->self;
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 		_g_object_unref0 (_data1_->play_pause_button);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 		_g_free0 (_data1_->play_pause_button_label);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 		_g_object_unref0 (self);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 		g_slice_free (Block1Data, _data1_);
 #line 126 "Window.c"
 	}
@@ -131,11 +131,11 @@ _my_app_window___lambda4_ (Block1Data* _data1_)
 {
 	MyAppWindow* self;
 	const gchar* _tmp0_;
-#line 50 "../Window.vala"
+#line 50 "../src/Window.vala"
 	self = _data1_->self;
-#line 51 "../Window.vala"
+#line 51 "../src/Window.vala"
 	_tmp0_ = _data1_->play_pause_button_label;
-#line 51 "../Window.vala"
+#line 51 "../src/Window.vala"
 	if (g_strcmp0 (_tmp0_, "Play") == 0) {
 #line 141 "Window.c"
 		gchar* _tmp1_;
@@ -144,29 +144,29 @@ _my_app_window___lambda4_ (Block1Data* _data1_)
 		GtkButton* _tmp4_;
 		GtkImage* _tmp5_;
 		GtkImage* _tmp6_;
-#line 53 "../Window.vala"
+#line 53 "../src/Window.vala"
 		_tmp1_ = g_strdup ("Pause");
-#line 53 "../Window.vala"
+#line 53 "../src/Window.vala"
 		_g_free0 (_data1_->play_pause_button_label);
-#line 53 "../Window.vala"
+#line 53 "../src/Window.vala"
 		_data1_->play_pause_button_label = _tmp1_;
-#line 54 "../Window.vala"
+#line 54 "../src/Window.vala"
 		_tmp2_ = _data1_->play_pause_button;
-#line 54 "../Window.vala"
+#line 54 "../src/Window.vala"
 		_tmp3_ = _data1_->play_pause_button_label;
-#line 54 "../Window.vala"
+#line 54 "../src/Window.vala"
 		gtk_button_set_label (_tmp2_, _tmp3_);
-#line 55 "../Window.vala"
+#line 55 "../src/Window.vala"
 		_tmp4_ = _data1_->play_pause_button;
-#line 55 "../Window.vala"
+#line 55 "../src/Window.vala"
 		_tmp5_ = (GtkImage*) gtk_image_new_from_icon_name ("media-playback-pause", (GtkIconSize) GTK_ICON_SIZE_SMALL_TOOLBAR);
-#line 55 "../Window.vala"
+#line 55 "../src/Window.vala"
 		g_object_ref_sink (_tmp5_);
-#line 55 "../Window.vala"
+#line 55 "../src/Window.vala"
 		_tmp6_ = _tmp5_;
-#line 55 "../Window.vala"
+#line 55 "../src/Window.vala"
 		gtk_button_set_image (_tmp4_, (GtkWidget*) _tmp6_);
-#line 55 "../Window.vala"
+#line 55 "../src/Window.vala"
 		_g_object_unref0 (_tmp6_);
 #line 172 "Window.c"
 	} else {
@@ -176,29 +176,29 @@ _my_app_window___lambda4_ (Block1Data* _data1_)
 		GtkButton* _tmp10_;
 		GtkImage* _tmp11_;
 		GtkImage* _tmp12_;
-#line 59 "../Window.vala"
+#line 59 "../src/Window.vala"
 		_tmp7_ = g_strdup ("Play");
-#line 59 "../Window.vala"
+#line 59 "../src/Window.vala"
 		_g_free0 (_data1_->play_pause_button_label);
-#line 59 "../Window.vala"
+#line 59 "../src/Window.vala"
 		_data1_->play_pause_button_label = _tmp7_;
-#line 60 "../Window.vala"
+#line 60 "../src/Window.vala"
 		_tmp8_ = _data1_->play_pause_button;
-#line 60 "../Window.vala"
+#line 60 "../src/Window.vala"
 		_tmp9_ = _data1_->play_pause_button_label;
-#line 60 "../Window.vala"
+#line 60 "../src/Window.vala"
 		gtk_button_set_label (_tmp8_, _tmp9_);
-#line 61 "../Window.vala"
+#line 61 "../src/Window.vala"
 		_tmp10_ = _data1_->play_pause_button;
-#line 61 "../Window.vala"
+#line 61 "../src/Window.vala"
 		_tmp11_ = (GtkImage*) gtk_image_new_from_icon_name ("media-playback-start", (GtkIconSize) GTK_ICON_SIZE_SMALL_TOOLBAR);
-#line 61 "../Window.vala"
+#line 61 "../src/Window.vala"
 		g_object_ref_sink (_tmp11_);
-#line 61 "../Window.vala"
+#line 61 "../src/Window.vala"
 		_tmp12_ = _tmp11_;
-#line 61 "../Window.vala"
+#line 61 "../src/Window.vala"
 		gtk_button_set_image (_tmp10_, (GtkWidget*) _tmp12_);
-#line 61 "../Window.vala"
+#line 61 "../src/Window.vala"
 		_g_object_unref0 (_tmp12_);
 #line 204 "Window.c"
 	}
@@ -208,7 +208,7 @@ static void
 __my_app_window___lambda4__gtk_button_clicked (GtkButton* _sender,
                                                gpointer self)
 {
-#line 50 "../Window.vala"
+#line 50 "../src/Window.vala"
 	_my_app_window___lambda4_ (self);
 #line 214 "Window.c"
 }
@@ -267,213 +267,213 @@ my_app_window_constructor (GType type,
 	GtkBox* _tmp33_;
 	GtkBox* _tmp34_;
 	GtkBox* _tmp35_;
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	parent_class = G_OBJECT_CLASS (my_app_window_parent_class);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	obj = parent_class->constructor (type, n_construct_properties, construct_properties);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, MY_APP_TYPE_WINDOW, MyAppWindow);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	_data1_ = g_slice_new0 (Block1Data);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	_data1_->_ref_count_ = 1;
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	_data1_->self = g_object_ref (self);
-#line 10 "../Window.vala"
+#line 10 "../src/Window.vala"
 	gtk_window_set_title ((GtkWindow*) self, "Promodoro");
-#line 11 "../Window.vala"
+#line 11 "../src/Window.vala"
 	g_object_set ((GtkWindow*) self, "window-position", GTK_WIN_POS_CENTER, NULL);
-#line 12 "../Window.vala"
+#line 12 "../src/Window.vala"
 	gtk_window_set_default_size ((GtkWindow*) self, 400, 200);
-#line 14 "../Window.vala"
+#line 14 "../src/Window.vala"
 	work_time_label = 45;
-#line 15 "../Window.vala"
+#line 15 "../src/Window.vala"
 	is_play = FALSE;
-#line 19 "../Window.vala"
+#line 19 "../src/Window.vala"
 	_tmp0_ = (GtkHeaderBar*) gtk_header_bar_new ();
-#line 19 "../Window.vala"
+#line 19 "../src/Window.vala"
 	g_object_ref_sink (_tmp0_);
-#line 19 "../Window.vala"
+#line 19 "../src/Window.vala"
 	header_bar = _tmp0_;
-#line 20 "../Window.vala"
+#line 20 "../src/Window.vala"
 	_tmp1_ = header_bar;
-#line 20 "../Window.vala"
+#line 20 "../src/Window.vala"
 	gtk_header_bar_set_show_close_button (_tmp1_, TRUE);
-#line 21 "../Window.vala"
+#line 21 "../src/Window.vala"
 	_tmp2_ = header_bar;
-#line 21 "../Window.vala"
+#line 21 "../src/Window.vala"
 	gtk_header_bar_set_title (_tmp2_, "Promodoro");
-#line 22 "../Window.vala"
+#line 22 "../src/Window.vala"
 	_tmp3_ = header_bar;
-#line 22 "../Window.vala"
+#line 22 "../src/Window.vala"
 	_tmp4_ = gtk_widget_get_style_context ((GtkWidget*) _tmp3_);
-#line 22 "../Window.vala"
+#line 22 "../src/Window.vala"
 	header_bar_context = _tmp4_;
-#line 23 "../Window.vala"
+#line 23 "../src/Window.vala"
 	_tmp5_ = header_bar_context;
-#line 23 "../Window.vala"
+#line 23 "../src/Window.vala"
 	gtk_style_context_add_class (_tmp5_, "default-decoration");
-#line 24 "../Window.vala"
+#line 24 "../src/Window.vala"
 	_tmp6_ = header_bar_context;
-#line 24 "../Window.vala"
+#line 24 "../src/Window.vala"
 	gtk_style_context_add_class (_tmp6_, GTK_STYLE_CLASS_FLAT);
-#line 25 "../Window.vala"
+#line 25 "../src/Window.vala"
 	_tmp7_ = (GtkImage*) gtk_image_new_from_icon_name ("emblem-system", (GtkIconSize) GTK_ICON_SIZE_SMALL_TOOLBAR);
-#line 25 "../Window.vala"
+#line 25 "../src/Window.vala"
 	g_object_ref_sink (_tmp7_);
-#line 25 "../Window.vala"
+#line 25 "../src/Window.vala"
 	_tmp8_ = (GtkButton*) gtk_button_new ();
-#line 25 "../Window.vala"
+#line 25 "../src/Window.vala"
 	gtk_button_set_image (_tmp8_, (GtkWidget*) _tmp7_);
-#line 25 "../Window.vala"
+#line 25 "../src/Window.vala"
 	_g_object_unref0 (_tmp7_);
-#line 25 "../Window.vala"
+#line 25 "../src/Window.vala"
 	gtk_button_set_always_show_image (_tmp8_, TRUE);
-#line 25 "../Window.vala"
+#line 25 "../src/Window.vala"
 	g_object_ref_sink (_tmp8_);
-#line 25 "../Window.vala"
+#line 25 "../src/Window.vala"
 	settings_button = _tmp8_;
-#line 29 "../Window.vala"
+#line 29 "../src/Window.vala"
 	_tmp9_ = header_bar;
-#line 29 "../Window.vala"
+#line 29 "../src/Window.vala"
 	_tmp10_ = settings_button;
-#line 29 "../Window.vala"
+#line 29 "../src/Window.vala"
 	gtk_header_bar_pack_end (_tmp9_, (GtkWidget*) _tmp10_);
-#line 32 "../Window.vala"
+#line 32 "../src/Window.vala"
 	_tmp11_ = header_bar;
-#line 32 "../Window.vala"
+#line 32 "../src/Window.vala"
 	gtk_window_set_titlebar ((GtkWindow*) self, (GtkWidget*) _tmp11_);
-#line 36 "../Window.vala"
+#line 36 "../src/Window.vala"
 	_tmp12_ = g_strdup_printf ("%i", work_time_label);
-#line 36 "../Window.vala"
+#line 36 "../src/Window.vala"
 	_tmp13_ = _tmp12_;
-#line 36 "../Window.vala"
+#line 36 "../src/Window.vala"
 	_tmp14_ = (GtkLabel*) gtk_label_new (_tmp13_);
-#line 36 "../Window.vala"
+#line 36 "../src/Window.vala"
 	g_object_ref_sink (_tmp14_);
-#line 36 "../Window.vala"
+#line 36 "../src/Window.vala"
 	_tmp15_ = _tmp14_;
-#line 36 "../Window.vala"
+#line 36 "../src/Window.vala"
 	_g_free0 (_tmp13_);
-#line 36 "../Window.vala"
+#line 36 "../src/Window.vala"
 	work_time = _tmp15_;
-#line 42 "../Window.vala"
+#line 42 "../src/Window.vala"
 	_tmp16_ = g_strdup ("Play");
-#line 42 "../Window.vala"
+#line 42 "../src/Window.vala"
 	_data1_->play_pause_button_label = _tmp16_;
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	_tmp17_ = _data1_->play_pause_button_label;
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	_tmp18_ = g_strdup (_tmp17_);
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	_tmp19_ = (GtkImage*) gtk_image_new_from_icon_name ("media-playback-start", (GtkIconSize) GTK_ICON_SIZE_SMALL_TOOLBAR);
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	g_object_ref_sink (_tmp19_);
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	_tmp20_ = (GtkButton*) gtk_button_new ();
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	g_object_set ((GtkWidget*) _tmp20_, "margin", 10, NULL);
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	gtk_button_set_label (_tmp20_, _tmp18_);
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	_g_free0 (_tmp18_);
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	gtk_button_set_image (_tmp20_, (GtkWidget*) _tmp19_);
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	_g_object_unref0 (_tmp19_);
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	gtk_button_set_always_show_image (_tmp20_, TRUE);
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	g_object_ref_sink (_tmp20_);
-#line 43 "../Window.vala"
+#line 43 "../src/Window.vala"
 	_data1_->play_pause_button = _tmp20_;
-#line 50 "../Window.vala"
+#line 50 "../src/Window.vala"
 	_tmp21_ = _data1_->play_pause_button;
-#line 50 "../Window.vala"
+#line 50 "../src/Window.vala"
 	g_signal_connect_data (_tmp21_, "clicked", (GCallback) __my_app_window___lambda4__gtk_button_clicked, block1_data_ref (_data1_), (GClosureNotify) block1_data_unref, 0);
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	_tmp22_ = g_strdup ("Reset");
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	_tmp23_ = (GtkImage*) gtk_image_new_from_icon_name ("media-playlist-repeat", (GtkIconSize) GTK_ICON_SIZE_SMALL_TOOLBAR);
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	g_object_ref_sink (_tmp23_);
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	_tmp24_ = (GtkButton*) gtk_button_new ();
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	g_object_set ((GtkWidget*) _tmp24_, "margin", 10, NULL);
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	gtk_button_set_label (_tmp24_, _tmp22_);
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	_g_free0 (_tmp22_);
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	gtk_button_set_image (_tmp24_, (GtkWidget*) _tmp23_);
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	_g_object_unref0 (_tmp23_);
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	gtk_button_set_always_show_image (_tmp24_, TRUE);
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	g_object_ref_sink (_tmp24_);
-#line 66 "../Window.vala"
+#line 66 "../src/Window.vala"
 	reset_button = _tmp24_;
-#line 75 "../Window.vala"
+#line 75 "../src/Window.vala"
 	_tmp25_ = (GtkBox*) gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-#line 75 "../Window.vala"
+#line 75 "../src/Window.vala"
 	g_object_ref_sink (_tmp25_);
-#line 75 "../Window.vala"
+#line 75 "../src/Window.vala"
 	hbox = _tmp25_;
-#line 76 "../Window.vala"
+#line 76 "../src/Window.vala"
 	_tmp26_ = (GtkBox*) gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-#line 76 "../Window.vala"
+#line 76 "../src/Window.vala"
 	g_object_ref_sink (_tmp26_);
-#line 76 "../Window.vala"
+#line 76 "../src/Window.vala"
 	vbox = _tmp26_;
-#line 80 "../Window.vala"
+#line 80 "../src/Window.vala"
 	_tmp27_ = hbox;
-#line 80 "../Window.vala"
+#line 80 "../src/Window.vala"
 	_tmp28_ = _data1_->play_pause_button;
-#line 80 "../Window.vala"
+#line 80 "../src/Window.vala"
 	gtk_box_pack_start (_tmp27_, (GtkWidget*) _tmp28_, TRUE, TRUE, (guint) 0);
-#line 81 "../Window.vala"
+#line 81 "../src/Window.vala"
 	_tmp29_ = hbox;
-#line 81 "../Window.vala"
+#line 81 "../src/Window.vala"
 	_tmp30_ = reset_button;
-#line 81 "../Window.vala"
+#line 81 "../src/Window.vala"
 	gtk_box_pack_start (_tmp29_, (GtkWidget*) _tmp30_, TRUE, TRUE, (guint) 0);
-#line 84 "../Window.vala"
+#line 84 "../src/Window.vala"
 	_tmp31_ = vbox;
-#line 84 "../Window.vala"
+#line 84 "../src/Window.vala"
 	_tmp32_ = work_time;
-#line 84 "../Window.vala"
+#line 84 "../src/Window.vala"
 	gtk_box_pack_start (_tmp31_, (GtkWidget*) _tmp32_, TRUE, TRUE, (guint) 0);
-#line 85 "../Window.vala"
+#line 85 "../src/Window.vala"
 	_tmp33_ = vbox;
-#line 85 "../Window.vala"
+#line 85 "../src/Window.vala"
 	_tmp34_ = hbox;
-#line 85 "../Window.vala"
+#line 85 "../src/Window.vala"
 	gtk_box_pack_end (_tmp33_, (GtkWidget*) _tmp34_, TRUE, TRUE, (guint) 0);
-#line 86 "../Window.vala"
+#line 86 "../src/Window.vala"
 	_tmp35_ = vbox;
-#line 86 "../Window.vala"
+#line 86 "../src/Window.vala"
 	gtk_container_add ((GtkContainer*) self, (GtkWidget*) _tmp35_);
-#line 87 "../Window.vala"
+#line 87 "../src/Window.vala"
 	gtk_widget_show_all ((GtkWidget*) self);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	_g_object_unref0 (vbox);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	_g_object_unref0 (hbox);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	_g_object_unref0 (reset_button);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	_g_object_unref0 (work_time);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	_g_object_unref0 (settings_button);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	_g_object_unref0 (header_bar);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	block1_data_unref (_data1_);
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	_data1_ = NULL;
-#line 9 "../Window.vala"
+#line 9 "../src/Window.vala"
 	return obj;
 #line 479 "Window.c"
 }
@@ -482,9 +482,9 @@ static void
 my_app_window_class_init (MyAppWindowClass * klass,
                           gpointer klass_data)
 {
-#line 1 "../Window.vala"
+#line 1 "../src/Window.vala"
 	my_app_window_parent_class = g_type_class_peek_parent (klass);
-#line 1 "../Window.vala"
+#line 1 "../src/Window.vala"
 	G_OBJECT_CLASS (klass)->constructor = my_app_window_constructor;
 #line 490 "Window.c"
 }

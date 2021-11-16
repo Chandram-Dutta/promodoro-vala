@@ -33,15 +33,15 @@ _vala_main (gchar** args,
 	Promodoro* app = NULL;
 	Promodoro* _tmp0_;
 	gint result = 0;
-#line 4 "../Main.vala"
+#line 4 "../src/Main.vala"
 	_tmp0_ = promodoro_new ();
-#line 4 "../Main.vala"
+#line 4 "../src/Main.vala"
 	app = _tmp0_;
-#line 6 "../Main.vala"
+#line 6 "../src/Main.vala"
 	result = g_application_run ((GApplication*) app, (gint) args_length1, args);
-#line 6 "../Main.vala"
+#line 6 "../src/Main.vala"
 	_g_object_unref0 (app);
-#line 6 "../Main.vala"
+#line 6 "../src/Main.vala"
 	return result;
 #line 47 "Main.c"
 }
@@ -50,7 +50,7 @@ int
 main (int argc,
       char ** argv)
 {
-#line 3 "../Main.vala"
+#line 3 "../src/Main.vala"
 	return _vala_main (argv, argc);
 #line 56 "Main.c"
 }
